@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body { height: 100%; }
+body { margin: 0 }
+
+
+
+.fade25 {
+  animation: fadeIn 0.25s;
+  opacity: 1
+}
+
+.fade50 {
+  animation: fadeIn 0.5s;
+  opacity: 1
+}
+
+.fade75 {
+  animation: fadeIn 0.75s;
+  opacity: 1
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+
+  100% {
+      opacity: 1;
+  }
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

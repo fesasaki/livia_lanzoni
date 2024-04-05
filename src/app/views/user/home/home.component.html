@@ -1,0 +1,206 @@
+<!-- Apresentação -->
+<div id="initial" class=" bg-primary sm:flex h-full" (click)="scroll('treatment')">
+  <div class="sm:w-[50%] sm:flex justify-center items-center">
+    <div class="sm:w-[500px] p-4">
+      <div class="font leading-tight font-extrabold mb-6">
+        <span>DRA.<br>BIANCA<br>BRANDÃO</span>
+      </div>
+      <div class="text-justify text-white mb-6">
+        <span>Olá, sou a Dra. Bianca Brandão, e é um prazer recebê-los em nosso espaço dedicado à harmonização facial e
+          corporal, onde a beleza natural é celebrada em cada procedimento. Como biomédica esteta, tenho uma paixão
+          profunda por ajudar meus pacientes a alcançarem sua melhor versão, respeitando sempre sua
+          individualidade.</span>
+      </div>
+      <div>
+        <button class="bg-white px-8 py-3 text-sm font-bold text-green-900 hover:text-white hover:bg-primary">
+          MARQUE UMA CONSULTA
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="sm:w-[50%]">
+    <img [src]="photo" alt="" class="object-cover w-full max-h-[800px]">
+  </div>
+</div>
+
+<!-- Tratamentos -->
+<div id="treatment" class="sm:h-[500px] bg-[#F7F7F7] p-8 mb-10">
+  <div class="flex justify-center items-center mb-4">
+    <div class="bg-primary h-[1px] w-28"></div>
+    <div class="mx-4">
+      <span class="tracking-widest text-green-900">TRATAMENTOS</span>
+    </div>
+    <div class="bg-primary h-[1px] w-28 "></div>
+  </div>
+
+  <div class="sm:flex sm:justify-around">
+    <ng-container *ngFor="let service of serviceList">
+      <div class="p-10">
+        <div class="text-center mb-4">
+          <span class="tracking-widest text-green-900">{{ service.name }}</span>
+        </div>
+        <div class="flex justify-center mb-4">
+          <div class="h-[1px] bg-primary w-[70px]"></div>
+        </div>
+        <div class="sm:max-w-[300px] text-center mb-6">
+          <span class="text-green-900">{{ service.description }}</span>
+        </div>
+        <div class="flex justify-center">
+          <button [routerLink]="service.path" class="p-4 font-bold text-white bg-primary px-8 py-3 text-sm">
+            SAIBA MAIS
+          </button>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+<!-- CARROSEL -->
+<div class="mb-4">
+  <div id="clinic" class="flex justify-center mb-8">
+    <div class="w-[800px] min-h-[500px] bg-primary py-4 px-10 text-white ">
+      <div class="mb-6">
+        <span class="tracking-widestfont-medium text-lg">CLÍNICA</span>
+      </div>
+      <div>
+        <span>Localizada em um ambiente acolhedor e moderno em Campinas, nossa clínica é um espaço onde você será
+          recebido
+          com carinho e atenção em cada passo do seu processo de transformação</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="carousel">
+    <div class="slider">
+      <div class="slide-track">
+        <div class="slide">
+          <img [src]="c1" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img [src]="c2" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img [src]="c3" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img [src]="c4" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img [src]="c1" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img [src]="c2" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img [src]="c3" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img [src]="c4" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img [src]="c1" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img [src]="c2" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img [src]="c3" height="100" width="250" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTATO -->
+<div id="contact" class="sm:flex justify-center mb-10">
+  <div class="p-10 sm-w[800px]">
+    <div class="mb-6">
+      <span class="tracking-widestfont-medium text-lg font-bold">CONTATO</span>
+    </div>
+
+    <div class="mb-4">
+      <div class="mb-2">
+        <span class="font-bold">HORÁRIO DE FUNCIONAMENTO</span>
+      </div>
+      <div class="mb-4">
+        <div>
+          <span class="italic">Terça à Sexta</span>
+        </div>
+        <div>
+          <span>Das 8h às 19h</span>
+        </div>
+      </div>
+      <div>
+        <div>
+          <span class="italic">Sábado</span>
+        </div>
+        <div>
+          <span>Das 8h às 15h</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="mb-2">
+        <span class="font-bold">ENDEREÇO</span>
+      </div>
+      <div class="mb-4">
+        <div>
+          <span>R. Dr. Barbosa da Cunha, 754 - Jardim Guanabara, Campinas - SP, 13073-320</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="mb-2">
+        <span class="font-bold">TELEFONE</span>
+      </div>
+      <div class="mb-4">
+        <div>
+          <span>(19) 98245-6699</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="mb-4">
+        <span class="font-bold">SIGA-NOS</span>
+      </div>
+      <div class="flex">
+        <div class="flex">
+          <button mat-icon-button class="bg-primary rounded-full p-2 hover:bg-green-800 mr-4"
+            (click)="openAnother('https://www.instagram.com/biancaabrandao/')">
+            <img [src]="instagram" class="w-8" alt="">
+          </button>
+
+          <button mat-icon-button class="bg-primary rounded-full p-2 hover:bg-green-800"
+            (click)="openAnother('https://www.facebook.com/drabiancaabrandao/?locale=pt_BR')">
+            <img [src]="facebook" class="w-8" alt="">
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ONDE ESTAMOS -->
+<div class="mb-10">
+  <div class="flex justify-center items-center mb-4">
+    <div class="bg-primary h-[1px] w-28"></div>
+    <div class="mx-4">
+      <span class="tracking-widest text-green-900">ONDE ESTAMOS</span>
+    </div>
+    <div class="bg-primary h-[1px] w-28 "></div>
+  </div>
+  <div class="flex justify-center">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.683271981372!2d-47.069298499999995!3d-22.8881557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8c61b5d5a9303%3A0x5dcd268816e9729!2sR.%20Dr.%20Barbosa%20da%20Cunha%2C%20770%20-%20Jardim%20Guanabara%2C%20Campinas%20-%20SP%2C%2013073-320!5e0!3m2!1spt-BR!2sbr!4v1712170249393!5m2!1spt-BR!2sbr"
+      width="1000px" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</div>
+
+<!-- FOOTER -->,
+<div class="h-[50px] bg-primary flex items-center justify-center">
+  <span class="text-white">© 2024  | Orgulhosamente criado por DB Company</span>
+</div>
