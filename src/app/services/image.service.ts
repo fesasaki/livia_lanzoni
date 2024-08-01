@@ -5,7 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class ImageService {
 
-  public photo = './assets/img/bianca.webp';
+  public photo = './assets/img/photo.jpg';
+  public profile = './assets/img/profile.jpg';
   public logo = './assets/img/logo.webp';
   public whatsapp = './assets/img/whatsapp.png';
   public instagram = './assets/img/instagram.png';

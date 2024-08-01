@@ -35,7 +35,7 @@ export class MainLayoutComponent {
   }
 
   public redirect() {
-    window.open('https://wa.me/5519982456699', '_blank')
+    window.open('https://api.whatsapp.com/send/?phone=19971304004&text&type=phone_number&app_absent=0', '_blank')
   }
 
 }
