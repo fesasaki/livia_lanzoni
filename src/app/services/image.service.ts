@@ -11,11 +11,16 @@ export class ImageService {
   public whatsapp = './assets/img/whatsapp.png';
   public instagram = './assets/img/instagram.png';
   public facebook = './assets/img/facebook.png';
+  public photo2 = './assets/img/CA208762.jpg';
 
-  public c1 = './assets/img/carousel/c1.png';
-  public c2 = './assets/img/carousel/c2.png';
-  public c3 = './assets/img/carousel/c3.png';
-  public c4 = './assets/img/carousel/c4.png';
+  public c1 = './assets/img/clinic (1).jpg';
+  public c2 = './assets/img/clinic (2).jpg';
+  public c3 = './assets/img/clinic (3).jpg';
+  public c4 = './assets/img/clinic (4).jpg';
+  public c5 = './assets/img/clinic (5).jpg';
+  public c6 = './assets/img/clinic (6).jpg';
+  public c7 = './assets/img/clinic (7).jpg';
+  public c8 = './assets/img/clinic (8).jpg';
 
   public service_1_1 = './assets/img/services/s1 (1).png';
   public service_1_2 = './assets/img/services/s1 (2).png';

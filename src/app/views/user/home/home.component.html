@@ -1,21 +1,29 @@
 <!-- Apresentação -->
-<div id="initial" class="sm:flex h-full bg-[url('./assets/img/photo.jpg')] bg-cover bg-center bg-no-repeat"
-  (click)="scroll('treatment')">
+<div id="initial" class="sm:flex h-full bg-[url('./assets/img/photo.jpg')] bg-cover bg-center bg-no-repeat">
   <div class="flex items-center bg-black/10 w-full h-[90vh]">
     <div class="lg:pl-20 p-4">
-      <div class="font sm:text-[60px]  text-[40px] leading-tight font-bold">
-        <span>Dra. Lívia Lanzoni</span>
+      <div class="sm:text-[80px]  text-[30px] leading-tight font-semibold mb-2">
+        <span class="font text">Dra. Lívia Lanzoni</span>
       </div>
       <div class="text-2xl leading-tight mb-6 text-white">
-        <span>CRM </span>
+        <span>RQE 93118 • CRM 116701 </span>
       </div>
       <div class="text-justify text-white mb-8">
         <span class="sm:text-3xl text-xl">Realçando a beleza dos seus olhos com precisão e cuidado! </span>
       </div>
-      <div>
+      <div class="flex items-center">
         <button (click)="redirect()"
-          class="bg-white px-8 py-3 text-sm font-bold text-primary hover:text-white hover:bg-primary rounded-full">
+          class="bg-white px-8 py-3 text-sm font-bold text-primary hover:text-white hover:bg-primary rounded-full mr-4">
           MARQUE UMA CONSULTA
+        </button>
+        <button mat-icon-button class="bg-white rounded-full p-2 hover:bg-primary mr-4"
+          (click)="openAnother('https://www.instagram.com/dra.livialanzoni/')">
+          <img [src]="instagram" class="w-8 img" alt="">
+        </button>
+
+        <button mat-icon-button class="bg-white rounded-full p-2 hover:bg-primary"
+          (click)="openAnother('https://www.facebook.com/draliviamaraarnonilanzoni/?locale=pt_BR')">
+          <img [src]="facebook" class="w-8 img" alt="">
         </button>
       </div>
     </div>
@@ -33,12 +41,13 @@
 
   <div class="sm:flex justify-around p-8">
     <div class="text-justify sm:mr-8 mb-4">
-      <span class="text-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-        has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-        and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
-        electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
-        Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
-        PageMaker including versions of Lorem Ipsum.</span>
+      <span class="text-white">Sou médica oftalmologista, subespecialista em Plástica Ocular, com 19 anos de experiência
+        na área. Durante minha carreira, realizei mais de 2.000 cirurgias de blefaroplastia. Este termo é abrangente e
+        inclui patologias como ptose, dermatocalase/blefarocalase, ectrópio, entrópio, lifting de supercílios, além da
+        correção de bolsas e flacidez palpebral. A blefaroplastia evoluiu significativamente ao longo dos anos,
+        proporcionando resultados mais naturais e otimizados. Atualmente, a cirurgia é realizada de maneira estruturada
+        e individualizada, utilizando tecnologias avançadas como o laser de CO2, que potencializa e melhora os
+        resultados do procedimento.</span>
     </div>
 
     <div>
@@ -47,6 +56,11 @@
   </div>
 </div>
 
+
+
+
+
+
 <div id="treatment" class="min-h-[200px] py-8 px-4">
   <div class="flex justify-center mb-4 p-8">
     <div class="bg-primary px-6 py-1 text-2xl font-medium text-white">
@@ -54,20 +68,62 @@
     </div>
   </div>
 
-  <div class="sm:flex flex-wrap justify-around">
-    <ng-container *ngFor="let treat of treatments">
-      <div class="p-4 sm:w-[400px] w-[90vw] ">
-        <div class="rounded-br-3xl border-l-4 border-[#E2B3A3] bg-primary p-4 mb-4 shadow-md">
-          <div class="mb-2">
-            <span class="text-white text-2xl font-medium ">{{ treat.name }}</span>
+  <div id="default-carousel" class="relative w-full" data-carousel="slide">
+    <!-- Carousel wrapper -->
+    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+      <!-- Item 1 -->
+      <ng-container *ngFor="let treat of treatments">
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <div class="text-center mb-6">
+            <span class="text-3xl text-primary">{{ treat.name }}</span>
           </div>
-          <div>
-            <span class="text-sm text-white">{{ treat.description }}</span>
+          <div class="flex justify-center">
+            <div class="text-center max-w-[1000px]">
+              <span class="text-xl text-black">{{ treat.description }}</span>
+            </div>
           </div>
         </div>
-      </div>
-    </ng-container>
+      </ng-container>
+    </div>
+    <!-- Slider indicators -->
+    <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+      <button type="button" class="w-3 h-3 rounded-full bg-black" aria-current="true" aria-label="Slide 1"
+        data-carousel-slide-to="0"></button>
+      <button type="button" class="w-3 h-3 rounded-full bg-black" aria-current="true" aria-label="Slide 2"
+        data-carousel-slide-to="1"></button>
+    </div>
+    <!-- Slider controls -->
+    <button type="button"
+      class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+      data-carousel-prev>
+      <span
+        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+        <svg class="w-4 h-4 text-primary dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M5 1 1 5l4 4" />
+        </svg>
+        <span class="sr-only">Previous</span>
+      </span>
+    </button>
+    <button type="button"
+      class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+      data-carousel-next>
+      <span
+        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+        <svg class="w-4 h-4 text-primary dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="m1 9 4-4-4-4" />
+        </svg>
+        <span class="sr-only">Next</span>
+      </span>
+    </button>
   </div>
+</div>
+
+<div class="h-[600px]">
+  <img [src]="imageService.photo2" alt="" class="object-cover h-[600px] w-full object-right-top">
 </div>
 
 <div id="clinic" class="min-h-[200px] py-8 px-4 bg-[#DFD4CF]">
@@ -78,64 +134,12 @@
   </div>
 
 
-
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-    <div class="grid gap-4">
-      <div>
-        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg"
-          alt="">
+  <div class="p-8 flex justify-around flex-wrap">
+    <ng-container *ngFor="let photo of images">
+      <div class="mb-4 mr-4">
+        <img class="w-[400px] h-[400px] object-cover rounded-md" [src]="photo" alt="">
       </div>
-      <div>
-        <img class="h-auto max-w-full rounded-lg"
-          src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg" alt="">
-      </div>
-      <div>
-        <img class="h-auto max-w-full rounded-lg"
-          src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg" alt="">
-      </div>
-    </div>
-    <div class="grid gap-4">
-      <div>
-        <img class="h-auto max-w-full rounded-lg"
-          src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg" alt="">
-      </div>
-      <div>
-        <img class="h-auto max-w-full rounded-lg"
-          src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg" alt="">
-      </div>
-      <div>
-        <img class="h-auto max-w-full rounded-lg"
-          src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg" alt="">
-      </div>
-    </div>
-    <div class="grid gap-4">
-      <div>
-        <img class="h-auto max-w-full rounded-lg"
-          src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg" alt="">
-      </div>
-      <div>
-        <img class="h-auto max-w-full rounded-lg"
-          src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg" alt="">
-      </div>
-      <div>
-        <img class="h-auto max-w-full rounded-lg"
-          src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg" alt="">
-      </div>
-    </div>
-    <div class="grid gap-4">
-      <div>
-        <img class="h-auto max-w-full rounded-lg"
-          src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg" alt="">
-      </div>
-      <div>
-        <img class="h-auto max-w-full rounded-lg"
-          src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg" alt="">
-      </div>
-      <div>
-        <img class="h-auto max-w-full rounded-lg"
-          src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg" alt="">
-      </div>
-    </div>
+    </ng-container>
   </div>
 
 </div>
@@ -178,7 +182,7 @@
         </div>
         <div class="mb-4">
           <div>
-            <span>R. Avenida Barao de Itapura, 610, Sala 410 - Botafogo, Campinas - SP, 13020-430</span>
+            <span>R. Avenida Barão de Itapura, 610, Sala 410 - Botafogo, Campinas - SP, 13020-430</span>
           </div>
         </div>
       </div>
@@ -205,9 +209,14 @@
               <img [src]="instagram" class="w-8" alt="">
             </button>
 
-            <button mat-icon-button class="bg-primary rounded-full p-2 hover:bg-black"
+            <button mat-icon-button class="bg-primary rounded-full p-2 hover:bg-black mr-4"
               (click)="openAnother('https://www.facebook.com/draliviamaraarnonilanzoni/?locale=pt_BR')">
               <img [src]="facebook" class="w-8" alt="">
+            </button>
+
+            <button (click)="redirect()"
+              class="bg-primary px-8 py-3 text-sm font-bold text-white hover:text-white hover:bg-primary rounded-full mr-4">
+              FAÇA SEU AGENDAMENTO
             </button>
           </div>
         </div>

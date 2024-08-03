@@ -1,9 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { initFlowbite } from 'flowbite';
 
 @Component({
   selector: 'app-root',
   template: '<router-outlet></router-outlet>',
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
+
+  ngOnInit(): void {
+    initFlowbite();
+  }
+
   title = 'bianca_brandao';
 }

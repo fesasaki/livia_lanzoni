@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { ModalPhotoComponent } from './components/modal-photo/modal-photo.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
+import { GalleryModule } from 'ng-gallery';
 
 
 
@@ -20,6 +21,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatMenuModule,
     BrowserAnimationsModule,
     MatDialogModule,
+
   ],
   exports: [
     ModalPhotoComponent,
@@ -28,6 +30,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatMenuModule,
     BrowserAnimationsModule,
     MatDialogModule,
+
   ]
 })
 export class SharedModule { }

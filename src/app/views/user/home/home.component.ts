@@ -2,6 +2,7 @@ import { ViewportScroller } from '@angular/common';
 import { AfterViewChecked, Component, ElementRef, HostListener, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { ImageService } from '@app/services/image.service';
 import { ScrollService } from '@app/services/scroll.service';
+import { GalleryModule, GalleryItem, ImageItem } from 'ng-gallery';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { ScrollService } from '@app/services/scroll.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit, AfterViewChecked{
+export class HomeComponent implements OnInit, AfterViewChecked {
 
 
   public photo = this.imageService.photo;
@@ -57,20 +58,23 @@ export class HomeComponent implements OnInit, AfterViewChecked{
     }
   ]
 
-  public images = [
-    'https://i.pinimg.com/736x/06/d0/53/06d053c072330789fd46bda08d1b40c3.jpg',
-    'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh7DU8s0HLjofOLC7Zpr3ywED6UaTqJ1XOywQt2as9DNMqro1ccwR0j-CNnAavr43YmoN5n2uJbCp24dl7slRW8ccOoh3xaYThdn_EnWduocSqWL-WZ2pDPrlDsML_9Dbe1FNe2M_PokZVQ/s1600/-consultorio-medico-fiateci-business.jpg',
-    'https://fotos.vivadecora.com.br/decoracao-clinica-mesa-com-cavaletes-bgarquitetura-162935-proportional-height_cover_medium.jpg',
-    'https://soluzionegestaodeclinicas.com.br/wp-content/uploads/2019/11/decora%C3%A7%C3%A3o-de-cl%C3%ADnica-medica-ilustra%C3%A7%C3%A3o-e1574084732420.jpg',
-    'https://clinicademilhoes.com/wp-content/uploads/2023/02/clinica-de-estetica-renata-rossi-8-980x550.jpg',
-    'https://omunicipioblumenau.com.br/wp-content/uploads/2022/06/gustavo-siqueira-consultorio-medico-em-balneario-camboriu-tem-pegada-chic-mas-sem-excessos-whatsapp-image-2022-06-21-at-12.19.49-1.jpeg',
+  images: Array<any> = [
+    this.imageService.c1,
+    this.imageService.c2,
+    this.imageService.c3,
+    this.imageService.c4,
+    this.imageService.c5,
+    this.imageService.c6,
+    this.imageService.c7,
+    this.imageService.c8,
   ]
+
 
   constructor(
     public imageService: ImageService,
     private _scrollService: ScrollService,
     private scroller: ViewportScroller
-  ) { }
+  ) {}
 
   ngAfterViewChecked(): void {
     this.scrollValue = this._scrollService.scrollValue
@@ -84,15 +88,10 @@ export class HomeComponent implements OnInit, AfterViewChecked{
   public scroll(id: any) {
     let el = document.getElementById(id);
     let position: any = el?.getBoundingClientRect();
-    /* el?.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-      inline: "nearest",
-    }); */
 
     window.scrollTo({
-      top: position.top + window.scrollY - 40,
-      left: position.left,
+      top: position?.top + window.scrollY - 50,
+      left: position?.left,
       behavior: 'smooth'
     })
   }

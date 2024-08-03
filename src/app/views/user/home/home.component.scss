@@ -1,8 +1,15 @@
+
+
 .font {
-  font-family: 'Montserrat';
+  font-family: 'Bilbo Swash Caps';
   color: white;
   letter-spacing: 5px;
 }
+
+.img {
+  filter: sepia(2) saturate(1) hue-rotate(-20deg) brightness(0.1);
+}
+
 
 .triangle {
   width: 0px;

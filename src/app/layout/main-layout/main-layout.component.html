@@ -1,38 +1,52 @@
 <div>
   <div class="fixed bottom-5 right-2">
-    <button
-      class="flex items-center justify-center bg-gray-200 hover:bg-white p-2 rounded-full hover:scale-110 z-40" (click)="redirect()">
+    <button class="flex items-center justify-center bg-gray-200 hover:bg-white p-2 rounded-full hover:scale-110 z-40"
+      (click)="redirect()">
       <img [src]="whatsapp" alt="" class="w-14">
     </button>
   </div>
-  <nav class="h-[80px] bg-secondary justify-between flex items-center fixed top-0 w-full z-50 shadow-lg">
-    <div class="sm:w-[50%] flex justify-center items-center p-2">
-      <img [src]="logo" alt="" class="h-20 sm:h-22 pb-2">
-    </div>
-    <div class="hidden sm:w-[50%] sm:flex sm:justify-end sm:items-center pr-5 h-full">
-      <button class="text-sm text-white font-medium hover:font-semibold hover:bg-primary h-full px-4" (click)="scroll('initial')">HOME</button>
-      <button class="text-sm text-white font-medium hover:font-semibold hover:bg-primary h-full px-4" (click)="scroll('about')">SOBRE</button>
-      <button class="text-sm text-white font-medium hover:font-semibold hover:bg-primary h-full px-4" (click)="scroll('treatment')">TRATAMENTOS</button>
-      <button class="text-sm text-white font-medium hover:font-semibold hover:bg-primary h-full px-4" (click)="scroll('clinic')">CLÍNICA</button>
-      <button class="text-sm text-white font-medium hover:font-semibold hover:bg-primary h-full px-4" (click)="scroll('contact')">CONTATO</button>
-    </div>
 
-    <div class="sm:hidden fixed right-0 pr-4">
-      <button mat-icon-button [matMenuTriggerFor]="menu">
-        <mat-icon class="text-white">menu</mat-icon>
-      </button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="scroll('initial')">Início</button>
-        <button mat-menu-item (click)="scroll('about')">Sobre</button>
-        <button mat-menu-item (click)="scroll('treatment')">Tratamentos</button>
-        <button mat-menu-item (click)="scroll('clinic')">Clínica</button>
-        <button mat-menu-item (click)="scroll('contact')">Contato</button>
-      </mat-menu>
+  <nav class="h-[100px] bg-secondary fixed top-0 w-full z-50 shadow-lg">
+    <div class="justify-between flex items-center">
+      <div class="sm:w-[50%] flex justify-center items-center p-2">
+        <div>
+          <div class="pl-2 text-white flex items-end mb-[2px]">
+            <span class="mr-2">(19) 97130-4004</span>
+            <span class="mb-[1px]">@dra.livialanzoni</span>
+          </div>
+          <img [src]="logo" alt="" class="h-16 lg:h-16 pb-2">
+        </div>
+      </div>
+      <div class="hidden lg:w-[50%] lg:flex lg:justify-end lg:items-center pr-5 h-[100px]">
+        <button class="text-sm text-white font-medium hover:font-semibold hover:bg-primary h-full px-4"
+          (click)="scroll('initial')">HOME</button>
+        <button class="text-sm text-white font-medium hover:font-semibold hover:bg-primary h-full px-4"
+          (click)="scroll('about')">SOBRE</button>
+        <button class="text-sm text-white font-medium hover:font-semibold hover:bg-primary h-full px-4"
+          (click)="scroll('treatment')">TRATAMENTOS</button>
+        <button class="text-sm text-white font-medium hover:font-semibold hover:bg-primary h-full px-4"
+          (click)="scroll('clinic')">CLÍNICA</button>
+        <button class="text-sm text-white font-medium hover:font-semibold hover:bg-primary h-full px-4"
+          (click)="scroll('contact')">CONTATO</button>
+      </div>
 
+      <div class="lg:hidden fixed right-0 pr-4">
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon class="text-white">menu</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="scroll('initial')">Início</button>
+          <button mat-menu-item (click)="scroll('about')">Sobre</button>
+          <button mat-menu-item (click)="scroll('treatment')">Tratamentos</button>
+          <button mat-menu-item (click)="scroll('clinic')">Clínica</button>
+          <button mat-menu-item (click)="scroll('contact')">Contato</button>
+        </mat-menu>
+
+      </div>
     </div>
   </nav>
 
-  <div class="mt-[80px] h-full fade75">
+  <div class="mt-[100px] h-full fade75">
     <router-outlet></router-outlet>
   </div>
 </div>
