@@ -24,6 +24,8 @@ export class HomeComponent implements OnInit, AfterViewChecked {
   public c3 = this.imageService.c3;
   public c4 = this.imageService.c4;
 
+  public curretYear = new Date().getFullYear();
+
   public serviceList = [
     {
       name: 'PREENCHIMENTO LABIAL',
